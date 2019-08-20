@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <div>
+            <p style="display:block;float:left">Urmart</p>
+            <div>
+                <a href="/urmart/logout_action/" style="float:right">log out</a>
+            </div>
+        </div>
+
+        <div style="clear:both"></div>
+        <h2>Product List</h2>
+        <button type="button" class="btn btn-primary" id="refresh_btn" style="float:right">Refresh</button>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Stock Pcs</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Shop Id</th>
+                    <th scope="col">Vip</th>
+                </tr>
+            </thead>
+            <tbody id="product_body">
+            {% for product in product_list %}
+                <tr>
+                    <td>{{product.product_id}}</td>
+                    <td>{{product.stock_pcs}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.shop_id}}</td>
+                    <td>{{product.vip}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Order List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">order id</th>
+                    <th scope="col">product id</th>
+                    <th scope="col">qty</th>
+                    <th scope="col">price</th>
+                    <th scope="col">shop id</th>
+                    <th scope="col">member id</th>
+                    <th scope="col">order time</th>
+                </tr>
+            </thead>
+            <tbody id="order_body">
+            {% for order in order_list %}
+                <tr>
+                    <td>{{order.oo_id}}</td>
+                    <td>{{order.product_id}}</td>
+                    <td>{{order.product_num}}</td>
+                    <td>{{order.order_price}}</td>
+                    <td>{{order.shop_id}}</td>
+                    <td>{{order.member_id}}</td>
+                    <td>{{order.order_time}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+
+
+
+        <br />
+        <br />
+
+
+        <label>product id</label>
+        <select class="form-control" id="order_prod_id" style="width:50px">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+        <br />
+        <label>product number</label>
+        <br />
+        <input type="number" id="order_prod_num">
+        <br />
+        <br />
+        <button type="button" class="btn btn-primary" id="order_btn">Order</button>
+
+
+
+        <script>
+            $(function(){
+                var refresh_product_list = function(){
+                    $.post('product_list_ajax',{csrfmiddlewaretoken: '{{ csrf_token }}'},function(data){
+                        var prod_data = data.data
+                        $('#product_body').empty()
+                        for(var i in prod_data){
+                            $('#product_body').append('<tr>' +
+                                '<td>'+ prod_data[i].product_id +'</td>' +
+                                '<td>'+ prod_data[i].stock_pcs +'</td>' +
+                                '<td>'+ prod_data[i].price +'</td>' +
+                                '<td>'+ prod_data[i].shop_id +'</td>' +
+                                '<td>'+ prod_data[i].vip +'</td>' +
+                                '</tr>')
+                        }
+                    },'json')
+                }
+
+                $('#refresh_btn').on('click',function(){
+                    refresh_product_list()
+                })
+
+
+
+                var refresh_order_list = function(){
+                    $.post('order_list_ajax',{csrfmiddlewaretoken: '{{ csrf_token }}'},function(data){
+                        var order_data = data.data
+                        $('#order_body').empty()
+                        for(var i in order_data){
+                            $('#order_body').append('<tr>' +
+                                '<td>'+ order_data[i].oo_id +'</td>' +
+                                '<td>'+ order_data[i].product_id +'</td>' +
+                                '<td>'+ order_data[i].product_num +'</td>' +
+                                '<td>'+ order_data[i].order_price +'</td>' +
+                                '<td>'+ order_data[i].shop_id +'</td>' +
+                                '<td>'+ order_data[i].member_id +'</td>' +
+                                '<td>'+ order_data[i].order_time +'</td>' +
+                                '</tr>')
+                        }
+                    },'json')
+                }
+
+                var place_order = function(){
+                    var pid = $('#order_prod_id').val()
+                    var num = $('#order_prod_num').val()
+
+                    $.post('place_order_ajax',{csrfmiddlewaretoken: '{{ csrf_token }}',pid:pid,num:num},function(data){
+                        if(data.code == '401'){
+                            // window.location.href = '/urmart/loggin/'
+                        }
+                        if(data.code == '201'){
+                            alert("NOT VIP")
+                        }
+                        if(data.code == '202'){
+                            alert("NOT ENOUGH NUMBER")
+                        }
+                        if(data.code == '203'){
+                            alert("NOT ENOUGH NUMBER")
+                        }
+                        if(data.code == '200'){
+                            refresh_order_list()
+                            refresh_product_list()
+                            alert("OK")
+                        }
+
+                    })
+                }
+
+                $('#order_btn').on('click',function(){
+                    place_order()
+                })
+            })
+        </script>
+    </div>
+{% endblock %}

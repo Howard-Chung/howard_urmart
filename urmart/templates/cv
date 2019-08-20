@@ -1,0 +1,97 @@
+[專業技能] 
+＊ 網站架設與建置, EC2, S3, Nginx, Ubuntu.
+＊ 熟悉 PHP, Python, Css, Javascript.
+＊ 動態網頁功能的實作, Ajax 相關特效的實作.
+＊ RWD 版型調整.
+
+[工作經驗] 
+<Deep01 愛因斯坦人工智慧> 
+＊開發產品:
+　供醫院偵測腦部問題的網站
+＊開發方式:
+　Google Cloud, S3, Flask, pyqt, CSS, js.
+＊工作內容: 
+　-規劃與製作公司用主要網站(Python, Flask, Mysql, Google Cloud).
+　-規劃前後分離的網站架構, 前端 web 端, 後端 api, 增加安全性, 減少維護複雜度.
+　-製作後台, 搭配 bootstrap theme, 掌握客戶網站上傳的資料, 跟演算法判讀的結果.
+　-使用 cornerstone.js 顯示 DICOM檔案, 讓醫院可以 preview 要上傳到 
+    Server 偵測的內容.
+　-製作醫生標記用的網站(Flask), 標記結果存到 Mysql, 並且之後用其資料訓練AI.
+　-醫院用 QT 應用程式的開發與維護.
+　-API的開發與相關文件編寫.
+
+<好好投資> 
+＊開發產品:
+　公司網站前端開發
+　https://www.howinvest.com/
+＊開發方式:
+　EC2, gitflow, scrum
+＊工作內容: 
+　-開發與維護網頁前端功能, 確保各類網頁基金指數, 圖片, 圖表正常顯示.
+　-製作各類型波形圖, 圓餅圖, 長條圖, 供使用者查看基金績效.(Ecchart, Hichart, Sparkline)
+　-手機版(RWD, Media Query, CSS)的版型維護與製作.
+　-前端markdown文件的製作, 讓工程師可以快速暸解, 前端特效的表現, 以及
+   跟後端串接對應的 API.
+　-各類版型/配色調整.
+
+<奧創移動> 
+＊開發產品: 
+　3D 列印電商網站開發
+　cocowall 遊戲功能開發
+＊開發方式:
+　EC2, magento2, node.js, keystone.js
+＊工作內容: 
+　-magento2 商用網站, 客製化扣點方式, 租用方式, 商用邏輯實作到, magento2
+   內對應的事件擷取機制.
+　-3D 圖片的商品頁的預覽製作, 串接 clara.io 的 iframe, 並且擷取事件, 讓使用者
+   可以放大縮小 3d 圖, 或是更改材質, 看到對應的結果.
+　-3DprinterOS 第三方列印網頁串接, 使使用者可以透過網頁驅動自家3d印表機, 並且列印完成後執行扣點動作.
+　-magento2 第三方算錢模組(itoris)的客製化與修改, 以利於客戶上傳商品可以針對產品屬性設定不同的價錢.
+　-cocowall 遊戲功能後台的點數分配機制的查詢跟製作 (keystone.js).
+　-cocowall 遊戲功能的 API 撰寫 (node.js).
+
+<網訊科技> 
+＊開發產品: 
+　代購幫, 淘購
+＊開發方式:
+　Centos, VMware, codeigniter, mysql stored procedure
+＊工作內容: 
+　-淘購儲值系統開發與除錯, 確保使用者, 公司會計, 都能夠正確的核對金額, 並且正常使用.(PHP Codeigniter)
+　-代購幫會員儲存點數功能, 串接第三方網頁 (京東錢包), 讓使用者串接完成再導頁回網站.
+　-推播系統的開發(阿里雲), 與維護, 使使用者的 ios 或 android 手機都可以收到推播.
+　-API 底層的 Mysql Stored Procedure 的編寫.
+
+<Uitox>
+＊開發產品: 
+　ASAP 閃電購物
+＊開發方式:
+　php, codeigniter, js, angular
+＊工作內容: 
+　-使用 angular 製作出, 全世界不同國家的前端地址表格產生器, 供公司內部不同組的人串接並製作 html 表單.
+　-全球預設簡訊/email公版的管理系統開發與維護, 以利於公司快速建立分店網站.
+　-開發 API 供公司內部不同的 team 串接, 並編寫說明文件.
+　-網站功能統計資料的效能調整, 本來可能30秒的功能, 縮減到5秒內完成.
+　-會員購物中心的收貨地址功能撰寫.
+
+<醬子科技>
+＊開發產品:
+　全家食安網頁開發 https://foodsafety.family.com.tw
+＊開發方式:
+　EC2, php, codeigniter, js, jquery
+＊工作內容:
+　-串接全家資訊部 API, 定期做資料交換顯示 API.
+　-和美工串接 SPA 的所需用的套版. (RWD, SPA, CSS, Media Query)
+　-埋入Google Analysis 事件, 並且教育客戶如何使用GA查看使用者使用網頁.
+　-製作伯斯體育影片直播 API 供 ios team 串接.
+　-node.js 監控資料庫變化的程式的開發, 以利於開發者快速 debug, 增加開發速度.
+　-舊browser IE7, IE8, 的 CSS調整.
+　-撰寫公家機關需用的程式文件.
+
+<可利智碼>
+＊開發方式:
+　EC2, S3, php, Yii, js, jquery
+＊工作內容:
+　-製作後台(PHP), 以利於監控 Nas  狀態, Server 檔案狀態, 使用者觀看影片的數據.
+　-製作Nas 平日用跟 Server 同步資料的 shell script 跟 cron job.
+　-媒體影片上傳後, 批次轉檔的 shell script 跟 cron job 編寫, 充分利用半夜的時間轉檔案.
+　-開發 API 供 IOS, Android 使用.
